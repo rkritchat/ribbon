@@ -15,12 +15,11 @@ public class CalculateController {
 
     @PostMapping("/plus")
     public ResultObj plus(@RequestBody NumberReq req) {
-        System.out.println(environment.getProperty("server.port"));
-        return new ResultObj(req.getNum1() + req.getNum2());
+        return new ResultObj(req.getNum1() + req.getNum2(), environment.getProperty("server.port"));
     }
 
     @GetMapping("/minus/{num1}/and/{num2}")
     public ResultObj minis(@PathVariable("num1") int num1, @PathVariable("num2") int num2) {
-        return new ResultObj(num1 - num2);
+        return new ResultObj(num1 - num2, environment.getProperty("server.port"));
     }
 }
