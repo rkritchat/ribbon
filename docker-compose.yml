@@ -1,0 +1,27 @@
+version: '3.5'
+services:
+  eureka:
+    build: eureka-naming-server
+    hostname: eureka
+    networks:
+      dev_network:
+        aliases:
+          - eureka
+    ports:
+      - "8762:8762"
+
+  calculate-sever:
+    build: calculate-server
+    hostname: calculate-sv
+    restart: always
+    networks:
+      dev_network:
+        aliases:
+         - calculate-sv
+    ports:
+      - "9090-9099:9090"
+
+networks:
+  dev_network:
+
+
