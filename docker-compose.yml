@@ -21,6 +21,18 @@ services:
     ports:
       - "9090-9099:9090"
 
+  application:
+    build: application
+    hostname: application
+    restart: always
+    networks:
+      dev_network:
+        aliases:
+          - application
+    ports:
+      - "8181:8181"
+
+
 networks:
   dev_network:
 

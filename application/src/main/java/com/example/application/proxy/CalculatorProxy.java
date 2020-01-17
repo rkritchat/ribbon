@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "calculator-service")
-@RibbonClient(name = "calculator-service")
+@FeignClient(name = "calculate-sv")
+@RibbonClient(name = "calculate-sv")
 public interface CalculatorProxy {
 
     @PostMapping("/calculate/plus")
